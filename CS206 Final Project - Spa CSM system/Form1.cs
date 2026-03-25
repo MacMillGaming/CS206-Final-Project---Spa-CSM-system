@@ -4,6 +4,7 @@ namespace CS206_Final_Project___Spa_CSM_system
     {
         public Form1()
         {
+            Console.WriteLine("hi");
             InitializeComponent();
         }
     }
