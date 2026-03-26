@@ -38,153 +38,136 @@
             txtService = new TextBox();
             lblDate = new Label();
             textBox5 = new TextBox();
-            lblAddAppt = new Label();
-            txtAddAppt = new TextBox();
-            lblRemoveAppt = new Label();
-            txtRemoveAppt = new TextBox();
-            lblCancel = new Label();
-            txtCancel = new TextBox();
+            btnAddAppt = new Button();
+            btnRemoveAppt = new Button();
+            btnCancel = new Button();
             SuspendLayout();
             // 
             // lblSelectCustomer
             // 
             lblSelectCustomer.AutoSize = true;
-            lblSelectCustomer.Location = new Point(25, 26);
+            lblSelectCustomer.Location = new Point(32, 33);
+            lblSelectCustomer.Margin = new Padding(4, 0, 4, 0);
             lblSelectCustomer.Name = "lblSelectCustomer";
-            lblSelectCustomer.Size = new Size(140, 25);
+            lblSelectCustomer.Size = new Size(188, 32);
             lblSelectCustomer.TabIndex = 0;
             lblSelectCustomer.Text = "Select Customer";
             // 
             // txtSelectCustomer
             // 
-            txtSelectCustomer.Location = new Point(25, 54);
+            txtSelectCustomer.Location = new Point(32, 69);
+            txtSelectCustomer.Margin = new Padding(4);
             txtSelectCustomer.Name = "txtSelectCustomer";
-            txtSelectCustomer.Size = new Size(150, 31);
+            txtSelectCustomer.Size = new Size(194, 39);
             txtSelectCustomer.TabIndex = 1;
             // 
             // lblSelectAppt
             // 
             lblSelectAppt.AutoSize = true;
-            lblSelectAppt.Location = new Point(25, 161);
+            lblSelectAppt.Location = new Point(32, 206);
+            lblSelectAppt.Margin = new Padding(4, 0, 4, 0);
             lblSelectAppt.Name = "lblSelectAppt";
-            lblSelectAppt.Size = new Size(169, 25);
+            lblSelectAppt.Size = new Size(226, 32);
             lblSelectAppt.TabIndex = 2;
             lblSelectAppt.Text = "Select Appointment";
             // 
             // txtSelectAppt
             // 
-            txtSelectAppt.Location = new Point(25, 189);
+            txtSelectAppt.Location = new Point(32, 242);
+            txtSelectAppt.Margin = new Padding(4);
             txtSelectAppt.Name = "txtSelectAppt";
-            txtSelectAppt.Size = new Size(150, 31);
+            txtSelectAppt.Size = new Size(194, 39);
             txtSelectAppt.TabIndex = 3;
             // 
             // lblProfessional
             // 
             lblProfessional.AutoSize = true;
-            lblProfessional.Location = new Point(373, 26);
+            lblProfessional.Location = new Point(485, 33);
+            lblProfessional.Margin = new Padding(4, 0, 4, 0);
             lblProfessional.Name = "lblProfessional";
-            lblProfessional.Size = new Size(108, 25);
+            lblProfessional.Size = new Size(142, 32);
             lblProfessional.TabIndex = 4;
             lblProfessional.Text = "Professional";
             // 
             // txtProfessional
             // 
-            txtProfessional.Location = new Point(373, 54);
+            txtProfessional.Location = new Point(485, 69);
+            txtProfessional.Margin = new Padding(4);
             txtProfessional.Name = "txtProfessional";
-            txtProfessional.Size = new Size(150, 31);
+            txtProfessional.Size = new Size(194, 39);
             txtProfessional.TabIndex = 5;
             // 
             // lblService
             // 
             lblService.AutoSize = true;
-            lblService.Location = new Point(373, 161);
+            lblService.Location = new Point(485, 206);
+            lblService.Margin = new Padding(4, 0, 4, 0);
             lblService.Name = "lblService";
-            lblService.Size = new Size(67, 25);
+            lblService.Size = new Size(90, 32);
             lblService.TabIndex = 6;
             lblService.Text = "Service";
             // 
             // txtService
             // 
-            txtService.Location = new Point(373, 189);
+            txtService.Location = new Point(485, 242);
+            txtService.Margin = new Padding(4);
             txtService.Name = "txtService";
-            txtService.Size = new Size(150, 31);
+            txtService.Size = new Size(194, 39);
             txtService.TabIndex = 7;
             // 
             // lblDate
             // 
             lblDate.AutoSize = true;
-            lblDate.Location = new Point(373, 260);
+            lblDate.Location = new Point(485, 333);
+            lblDate.Margin = new Padding(4, 0, 4, 0);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(49, 25);
+            lblDate.Size = new Size(64, 32);
             lblDate.TabIndex = 8;
             lblDate.Text = "Date";
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(373, 288);
+            textBox5.Location = new Point(485, 369);
+            textBox5.Margin = new Padding(4);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 31);
+            textBox5.Size = new Size(194, 39);
             textBox5.TabIndex = 9;
             // 
-            // lblAddAppt
+            // btnAddAppt
             // 
-            lblAddAppt.AutoSize = true;
-            lblAddAppt.Location = new Point(638, 26);
-            lblAddAppt.Name = "lblAddAppt";
-            lblAddAppt.Size = new Size(157, 25);
-            lblAddAppt.TabIndex = 10;
-            lblAddAppt.Text = "Add Appointment";
+            btnAddAppt.Location = new Point(801, 62);
+            btnAddAppt.Name = "btnAddAppt";
+            btnAddAppt.Size = new Size(227, 46);
+            btnAddAppt.TabIndex = 16;
+            btnAddAppt.Text = "&Add Appointment";
+            btnAddAppt.UseVisualStyleBackColor = true;
             // 
-            // txtAddAppt
+            // btnRemoveAppt
             // 
-            txtAddAppt.Location = new Point(638, 54);
-            txtAddAppt.Name = "txtAddAppt";
-            txtAddAppt.Size = new Size(150, 31);
-            txtAddAppt.TabIndex = 11;
+            btnRemoveAppt.Location = new Point(801, 235);
+            btnRemoveAppt.Name = "btnRemoveAppt";
+            btnRemoveAppt.Size = new Size(217, 46);
+            btnRemoveAppt.TabIndex = 17;
+            btnRemoveAppt.Text = "&Remove Appt";
+            btnRemoveAppt.UseVisualStyleBackColor = true;
             // 
-            // lblRemoveAppt
+            // btnCancel
             // 
-            lblRemoveAppt.AutoSize = true;
-            lblRemoveAppt.Location = new Point(618, 161);
-            lblRemoveAppt.Name = "lblRemoveAppt";
-            lblRemoveAppt.Size = new Size(187, 25);
-            lblRemoveAppt.TabIndex = 12;
-            lblRemoveAppt.Text = "Remove Appointment";
-            // 
-            // txtRemoveAppt
-            // 
-            txtRemoveAppt.Location = new Point(638, 189);
-            txtRemoveAppt.Name = "txtRemoveAppt";
-            txtRemoveAppt.Size = new Size(150, 31);
-            txtRemoveAppt.TabIndex = 13;
-            // 
-            // lblCancel
-            // 
-            lblCancel.AutoSize = true;
-            lblCancel.Location = new Point(686, 260);
-            lblCancel.Name = "lblCancel";
-            lblCancel.Size = new Size(63, 25);
-            lblCancel.TabIndex = 14;
-            lblCancel.Text = "Cancel";
-            // 
-            // txtCancel
-            // 
-            txtCancel.Location = new Point(638, 288);
-            txtCancel.Name = "txtCancel";
-            txtCancel.Size = new Size(150, 31);
-            txtCancel.TabIndex = 15;
+            btnCancel.Location = new Point(838, 365);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(180, 46);
+            btnCancel.TabIndex = 18;
+            btnCancel.Text = "&Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
             // 
             // AddRemoveApptForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(txtCancel);
-            Controls.Add(lblCancel);
-            Controls.Add(txtRemoveAppt);
-            Controls.Add(lblRemoveAppt);
-            Controls.Add(txtAddAppt);
-            Controls.Add(lblAddAppt);
+            ClientSize = new Size(1040, 576);
+            Controls.Add(btnCancel);
+            Controls.Add(btnRemoveAppt);
+            Controls.Add(btnAddAppt);
             Controls.Add(textBox5);
             Controls.Add(lblDate);
             Controls.Add(txtService);
@@ -195,6 +178,7 @@
             Controls.Add(lblSelectAppt);
             Controls.Add(txtSelectCustomer);
             Controls.Add(lblSelectCustomer);
+            Margin = new Padding(4);
             Name = "AddRemoveApptForm";
             Text = "AddRemoveApptForm";
             ResumeLayout(false);
@@ -213,11 +197,8 @@
         private TextBox txtService;
         private Label lblDate;
         private TextBox textBox5;
-        private Label lblAddAppt;
-        private TextBox txtAddAppt;
-        private Label lblRemoveAppt;
-        private TextBox txtRemoveAppt;
-        private Label lblCancel;
-        private TextBox txtCancel;
+        private Button btnAddAppt;
+        private Button btnRemoveAppt;
+        private Button btnCancel;
     }
 }
