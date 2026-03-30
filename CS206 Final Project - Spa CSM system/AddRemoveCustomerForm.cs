@@ -16,5 +16,13 @@ namespace CS206_Final_Project___Spa_CSM_system
         {
             InitializeComponent();
         }
+
+        private Customers customer = null!;
+
+        public Customers GetNewCustomer()
+        {
+            this.ShowDialog();
+            return customer;
+        }
     }
 }

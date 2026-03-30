@@ -70,6 +70,7 @@ namespace CS206_Final_Project___Spa_CSM_system
         {
 
             ApptSummaryForm apptSummaryForm = new();
+            apptSummaryForm.ShowDialog();
 
         }
 

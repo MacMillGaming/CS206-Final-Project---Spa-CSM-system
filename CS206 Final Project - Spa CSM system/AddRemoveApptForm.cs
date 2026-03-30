@@ -16,5 +16,13 @@ namespace CS206_Final_Project___Spa_CSM_system
         {
             InitializeComponent();
         }
+
+        private Appointments appointment = null!;
+
+        public Appointments GetNewAppointment()
+        {
+            this.ShowDialog();
+            return appointment;
+        }
     }
 }
