@@ -16,5 +16,15 @@ namespace CS206_Final_Project___Spa_CSM_system
         {
             InitializeComponent();
         }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

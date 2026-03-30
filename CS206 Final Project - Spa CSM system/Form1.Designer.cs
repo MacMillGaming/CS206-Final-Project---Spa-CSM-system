@@ -62,6 +62,7 @@
             btnAddRemoveCust.TabIndex = 2;
             btnAddRemoveCust.Text = "Add/Remove &Customer";
             btnAddRemoveCust.UseVisualStyleBackColor = true;
+            btnAddRemoveCust.Click += btnAddRemoveCust_Click;
             // 
             // btnAddRemoveAppt
             // 
@@ -71,6 +72,7 @@
             btnAddRemoveAppt.TabIndex = 3;
             btnAddRemoveAppt.Text = "Add/Remove &Appt";
             btnAddRemoveAppt.UseVisualStyleBackColor = true;
+            btnAddRemoveAppt.Click += btnAddRemoveAppt_Click;
             // 
             // btnViewSummaries
             // 
@@ -80,6 +82,7 @@
             btnViewSummaries.TabIndex = 4;
             btnViewSummaries.Text = "View &Summaries";
             btnViewSummaries.UseVisualStyleBackColor = true;
+            btnViewSummaries.Click += btnViewSummaries_Click;
             // 
             // btnExit
             // 
@@ -89,6 +92,7 @@
             btnExit.TabIndex = 5;
             btnExit.Text = "&Exit";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // label1
             // 

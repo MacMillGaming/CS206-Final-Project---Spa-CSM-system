@@ -25,6 +25,7 @@ namespace CS206_Final_Project___Spa_CSM_system
             this.Phone = phone;
         }
 
+        public string GetDisplayText() => $"{FirstName} {LastName}, {Email}, {Phone}";
 
     }
 }

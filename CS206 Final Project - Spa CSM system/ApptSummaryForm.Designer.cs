@@ -78,6 +78,7 @@
             btnRun.TabIndex = 4;
             btnRun.Text = "&Run";
             btnRun.UseVisualStyleBackColor = true;
+            btnRun.Click += btnRun_Click;
             // 
             // btnCancel
             // 
@@ -87,6 +88,7 @@
             btnCancel.TabIndex = 5;
             btnCancel.Text = "&Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // label1
             // 
