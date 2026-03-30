@@ -9,19 +9,26 @@ namespace CS206_Final_Project___Spa_CSM_system
     public static class ApptDB
     {
 
-        private const string dir = @"C:\C#\Files";
-        private const string path = dir + "Appointments.txt";
+        private static readonly string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+
+        private static readonly string dir = Path.Combine(baseDir, "Files");
+
+        private static readonly string path = Path.Combine(dir, "Appointments.txt");
 
         public static void SaveAppointments(List<Appointments> appointments)
         {
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+
             StreamWriter textOut =
                 new StreamWriter(
                 new FileStream(path, FileMode.Create, FileAccess.Write));
 
             foreach (Appointments appointment in appointments)
             {
+                textOut.Write(appointment.CustomerName + "|");
                 textOut.Write(appointment.Professional + "|");
-                textOut.Write(appointment.Service + "!");
+                textOut.Write(appointment.Service + "|");
                 textOut.WriteLine(appointment.DateTime);
             }
 
@@ -46,14 +53,14 @@ namespace CS206_Final_Project___Spa_CSM_system
                 
                 Appointments appointment = new Appointments
                 {
-                    Professional = columns[0],
-                    Service = columns[1],
+
+                    CustomerName = columns[0],
+                    Professional = columns[1],
+                    Service = columns[2],
+                    DateTime = DateTime.Parse(columns[3])
                     
                 };
-
-                string datetime = appointment.DateTime.ToString();
-
-                datetime = columns[2];
+                               
 
                 appointments.Add(appointment);
             }

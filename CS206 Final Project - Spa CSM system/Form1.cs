@@ -14,6 +14,10 @@ namespace CS206_Final_Project___Spa_CSM_system
         {
             customers = CustomerDB.GetCustomers();
             appointments = ApptDB.GetAppointments();
+
+            cboNameLookup.DataSource = customers;
+            cboNameLookup.DisplayMember = "FullName";
+
             FillAppointmentsListBox();
 
         }
@@ -21,23 +25,38 @@ namespace CS206_Final_Project___Spa_CSM_system
         private void FillAppointmentsListBox()
         {
             lstAppt.Items.Clear();
-            foreach (Appointments a in appointments)
+
+            if (cboNameLookup.SelectedItem != null)
             {
-                lstAppt.Items.Add(a.GetDisplayText());
+                Customers selectedCustomer = (Customers)cboNameLookup.SelectedItem;
+
+                foreach (Appointments a in appointments)
+                {
+                    if (a.CustomerName == selectedCustomer.FullName)
+                    {
+                        lstAppt.Items.Add(a.GetDisplayText());
+                    }
+                }
             }
         }
 
         private void btnAddRemoveCust_Click(object sender, EventArgs e)
         {
-
-           
+            AddRemoveCustomerForm addRemoveCustForm = new();
+            Customers customer = addRemoveCustForm.GetNewCustomer(); //Add this method in Add/Remove Customer Form
+            if (customer != null)
+            {
+                customers.Add(customer);
+                CustomerDB.SaveCustomers(customers);
+                FillAppointmentsListBox();
+            }
 
         }
 
         private void btnAddRemoveAppt_Click(object sender, EventArgs e)
         {
             AddRemoveApptForm addRemoveApptForm = new();
-            Appointments appointment = addRemoveApptForm.GetNewAppointment(); //Add this method in Add/Remove Customer Form
+            Appointments appointment = addRemoveApptForm.GetNewAppointment(); //Add this method in Add/Remove Appt Form
             if (appointment != null)
             {
                 appointments.Add(appointment);
@@ -57,6 +76,11 @@ namespace CS206_Final_Project___Spa_CSM_system
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cboNameLookup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillAppointmentsListBox();
         }
     }
 }

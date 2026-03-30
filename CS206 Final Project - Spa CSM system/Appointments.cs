@@ -14,6 +14,8 @@ namespace CS206_Final_Project___Spa_CSM_system
         public string Service { get; set; } = " ";
         public DateTime DateTime { get; set; }
 
+        public string CustomerName { get; set; }
+
         public Appointments() { }
 
         public Appointments(string professional, string service, DateTime datetime)

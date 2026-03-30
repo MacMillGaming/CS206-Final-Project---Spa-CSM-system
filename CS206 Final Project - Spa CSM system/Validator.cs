@@ -71,5 +71,15 @@ namespace CS206_Final_Project___Spa_CSM_system
             return msg;
         }
 
+        public static string IsValidPhone(string value, string name)
+        {
+            string msg = "";
+            if (value.Length != 10)
+            {
+                msg = $"{name} must be a valid phone number.{LineEnd}";
+            }
+            return msg;
+        }
+
     }
 }

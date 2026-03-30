@@ -45,6 +45,7 @@
             cboNameLookup.Name = "cboNameLookup";
             cboNameLookup.Size = new Size(636, 40);
             cboNameLookup.TabIndex = 0;
+            cboNameLookup.SelectedIndexChanged += cboNameLookup_SelectedIndexChanged;
             // 
             // lstAppt
             // 
