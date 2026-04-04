@@ -57,7 +57,7 @@ namespace CS206_Final_Project___Spa_CSM_system
                     CustomerName = columns[0],
                     Professional = columns[1],
                     Service = columns[2],
-                    DateTime = DateTime.Parse(columns[3])
+                    DateTime = (columns[3])
                     
                 };
                                

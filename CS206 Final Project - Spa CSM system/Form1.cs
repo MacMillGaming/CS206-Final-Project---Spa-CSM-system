@@ -43,12 +43,27 @@ namespace CS206_Final_Project___Spa_CSM_system
         private void btnAddRemoveCust_Click(object sender, EventArgs e)
         {
             AddRemoveCustomerForm addRemoveCustForm = new();
-            Customers customer = addRemoveCustForm.GetNewCustomer(); //Add this method in Add/Remove Customer Form
+            Customers customer = addRemoveCustForm.GetNewCustomer(); 
             if (customer != null)
             {
-                customers.Add(customer);
-                CustomerDB.SaveCustomers(customers);
-                FillAppointmentsListBox();
+                
+               if (customers == null)
+               {
+                  customers = new List<Customers>();
+               }
+
+               customers.Add(customer);
+               CustomerDB.SaveCustomers(customers);
+
+               cboNameLookup.DataSource = null;
+               cboNameLookup.DataSource = customers;
+               cboNameLookup.DisplayMember = "FullName";
+
+               FillAppointmentsListBox();
+               MessageBox.Show("Customer Saved");
+                
+               
+                
             }
 
         }
@@ -56,12 +71,14 @@ namespace CS206_Final_Project___Spa_CSM_system
         private void btnAddRemoveAppt_Click(object sender, EventArgs e)
         {
             AddRemoveApptForm addRemoveApptForm = new();
-            Appointments appointment = addRemoveApptForm.GetNewAppointment(); //Add this method in Add/Remove Appt Form
+            Appointments appointment = addRemoveApptForm.GetNewAppointment(); 
             if (appointment != null)
             {
+
                 appointments.Add(appointment);
                 ApptDB.SaveAppointments(appointments);
                 FillAppointmentsListBox();
+                MessageBox.Show("Appointment Saved");
             }
 
         }

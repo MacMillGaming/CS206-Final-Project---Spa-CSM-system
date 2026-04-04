@@ -31,161 +31,187 @@
             lstCustomers = new ListBox();
             txtName = new TextBox();
             txtDOB = new TextBox();
-            txtAddress = new TextBox();
+            txtEmail = new TextBox();
             lblName = new Label();
             lblDateOfBirth = new Label();
-            lblAddress = new Label();
+            lblEmail = new Label();
             lblPhone = new Label();
             txtPhone = new TextBox();
             btnCancel = new Button();
-            lblAddCustomer = new Label();
-            lblRemoveCustomer = new Label();
             txtAddCustomer = new TextBox();
             txtRemoveCustomer = new TextBox();
+            lblLastName = new Label();
+            txtLastName = new TextBox();
+            btnAddCustomer = new Button();
+            btnRemoveCustomer = new Button();
             SuspendLayout();
             // 
             // lstCustomers
             // 
             lstCustomers.FormattingEnabled = true;
-            lstCustomers.ItemHeight = 15;
-            lstCustomers.Location = new Point(10, 23);
-            lstCustomers.Margin = new Padding(3, 2, 3, 2);
+            lstCustomers.Location = new Point(19, 49);
+            lstCustomers.Margin = new Padding(6, 4, 6, 4);
             lstCustomers.Name = "lstCustomers";
-            lstCustomers.Size = new Size(180, 199);
+            lstCustomers.Size = new Size(331, 420);
             lstCustomers.TabIndex = 0;
             // 
             // txtName
             // 
-            txtName.Location = new Point(207, 40);
-            txtName.Margin = new Padding(3, 2, 3, 2);
+            txtName.Location = new Point(383, 42);
+            txtName.Margin = new Padding(6, 4, 6, 4);
             txtName.Name = "txtName";
-            txtName.Size = new Size(110, 23);
+            txtName.Size = new Size(201, 39);
             txtName.TabIndex = 1;
             // 
             // txtDOB
             // 
-            txtDOB.Location = new Point(207, 94);
-            txtDOB.Margin = new Padding(3, 2, 3, 2);
+            txtDOB.Location = new Point(384, 201);
+            txtDOB.Margin = new Padding(6, 4, 6, 4);
             txtDOB.Name = "txtDOB";
-            txtDOB.Size = new Size(110, 23);
+            txtDOB.Size = new Size(201, 39);
             txtDOB.TabIndex = 2;
             // 
-            // txtAddress
+            // txtEmail
             // 
-            txtAddress.Location = new Point(207, 145);
-            txtAddress.Margin = new Padding(3, 2, 3, 2);
-            txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(110, 23);
-            txtAddress.TabIndex = 3;
+            txtEmail.Location = new Point(384, 309);
+            txtEmail.Margin = new Padding(6, 4, 6, 4);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(201, 39);
+            txtEmail.TabIndex = 3;
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(207, 23);
+            lblName.Location = new Point(383, 9);
+            lblName.Margin = new Padding(6, 0, 6, 0);
             lblName.Name = "lblName";
-            lblName.Size = new Size(42, 15);
+            lblName.Size = new Size(129, 32);
             lblName.TabIndex = 4;
-            lblName.Text = "Name:";
+            lblName.Text = "First Name";
+            lblName.Click += lblName_Click;
             // 
             // lblDateOfBirth
             // 
             lblDateOfBirth.AutoSize = true;
-            lblDateOfBirth.Location = new Point(207, 76);
+            lblDateOfBirth.Location = new Point(384, 162);
+            lblDateOfBirth.Margin = new Padding(6, 0, 6, 0);
             lblDateOfBirth.Name = "lblDateOfBirth";
-            lblDateOfBirth.Size = new Size(76, 15);
+            lblDateOfBirth.Size = new Size(155, 32);
             lblDateOfBirth.TabIndex = 5;
             lblDateOfBirth.Text = "Date of Birth:";
             // 
-            // lblAddress
+            // lblEmail
             // 
-            lblAddress.AutoSize = true;
-            lblAddress.Location = new Point(207, 128);
-            lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(52, 15);
-            lblAddress.TabIndex = 6;
-            lblAddress.Text = "Address:";
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(384, 273);
+            lblEmail.Margin = new Padding(6, 0, 6, 0);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(76, 32);
+            lblEmail.TabIndex = 6;
+            lblEmail.Text = "Email:";
             // 
             // lblPhone
             // 
             lblPhone.AutoSize = true;
-            lblPhone.Location = new Point(206, 176);
+            lblPhone.Location = new Point(383, 375);
+            lblPhone.Margin = new Padding(6, 0, 6, 0);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(44, 15);
+            lblPhone.Size = new Size(87, 32);
             lblPhone.TabIndex = 7;
             lblPhone.Text = "Phone:";
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(207, 193);
-            txtPhone.Margin = new Padding(3, 2, 3, 2);
+            txtPhone.Location = new Point(384, 412);
+            txtPhone.Margin = new Padding(6, 4, 6, 4);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(110, 23);
+            txtPhone.Size = new Size(201, 39);
             txtPhone.TabIndex = 8;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(366, 145);
-            btnCancel.Margin = new Padding(3, 2, 3, 2);
+            btnCancel.Location = new Point(680, 309);
+            btnCancel.Margin = new Padding(6, 4, 6, 4);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(82, 22);
+            btnCancel.Size = new Size(152, 47);
             btnCancel.TabIndex = 9;
             btnCancel.Text = "&Cancel";
             btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // lblAddCustomer
-            // 
-            lblAddCustomer.AutoSize = true;
-            lblAddCustomer.Location = new Point(354, 23);
-            lblAddCustomer.Name = "lblAddCustomer";
-            lblAddCustomer.Size = new Size(87, 15);
-            lblAddCustomer.TabIndex = 10;
-            lblAddCustomer.Text = "Add Customer:";
-            // 
-            // lblRemoveCustomer
-            // 
-            lblRemoveCustomer.AutoSize = true;
-            lblRemoveCustomer.Location = new Point(354, 76);
-            lblRemoveCustomer.Name = "lblRemoveCustomer";
-            lblRemoveCustomer.Size = new Size(108, 15);
-            lblRemoveCustomer.TabIndex = 11;
-            lblRemoveCustomer.Text = "Remove Customer:";
+            btnCancel.Click += btnCancel_Click;
             // 
             // txtAddCustomer
             // 
-            txtAddCustomer.Location = new Point(354, 40);
-            txtAddCustomer.Margin = new Padding(3, 2, 3, 2);
+            txtAddCustomer.Location = new Point(657, 412);
+            txtAddCustomer.Margin = new Padding(6, 4, 6, 4);
             txtAddCustomer.Name = "txtAddCustomer";
-            txtAddCustomer.Size = new Size(110, 23);
+            txtAddCustomer.Size = new Size(201, 39);
             txtAddCustomer.TabIndex = 12;
             // 
             // txtRemoveCustomer
             // 
-            txtRemoveCustomer.Location = new Point(354, 94);
-            txtRemoveCustomer.Margin = new Padding(3, 2, 3, 2);
+            txtRemoveCustomer.Location = new Point(657, 368);
+            txtRemoveCustomer.Margin = new Padding(6, 4, 6, 4);
             txtRemoveCustomer.Name = "txtRemoveCustomer";
-            txtRemoveCustomer.Size = new Size(110, 23);
+            txtRemoveCustomer.Size = new Size(201, 39);
             txtRemoveCustomer.TabIndex = 13;
+            // 
+            // lblLastName
+            // 
+            lblLastName.AutoSize = true;
+            lblLastName.Location = new Point(387, 84);
+            lblLastName.Name = "lblLastName";
+            lblLastName.Size = new Size(126, 32);
+            lblLastName.TabIndex = 15;
+            lblLastName.Text = "Last Name";
+            // 
+            // txtLastName
+            // 
+            txtLastName.Location = new Point(383, 119);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(200, 39);
+            txtLastName.TabIndex = 16;
+            // 
+            // btnAddCustomer
+            // 
+            btnAddCustomer.Location = new Point(636, 85);
+            btnAddCustomer.Name = "btnAddCustomer";
+            btnAddCustomer.Size = new Size(222, 46);
+            btnAddCustomer.TabIndex = 17;
+            btnAddCustomer.Text = "&Add Customer";
+            btnAddCustomer.UseVisualStyleBackColor = true;
+            btnAddCustomer.Click += btnAddCustomer_Click;
+            // 
+            // btnRemoveCustomer
+            // 
+            btnRemoveCustomer.Location = new Point(636, 201);
+            btnRemoveCustomer.Name = "btnRemoveCustomer";
+            btnRemoveCustomer.Size = new Size(222, 46);
+            btnRemoveCustomer.TabIndex = 18;
+            btnRemoveCustomer.Text = "&Remove Customer";
+            btnRemoveCustomer.UseVisualStyleBackColor = true;
             // 
             // AddRemoveCustomerForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(494, 239);
+            ClientSize = new Size(917, 510);
+            Controls.Add(btnRemoveCustomer);
+            Controls.Add(btnAddCustomer);
+            Controls.Add(txtLastName);
+            Controls.Add(lblLastName);
             Controls.Add(txtRemoveCustomer);
             Controls.Add(txtAddCustomer);
-            Controls.Add(lblRemoveCustomer);
-            Controls.Add(lblAddCustomer);
             Controls.Add(btnCancel);
             Controls.Add(txtPhone);
             Controls.Add(lblPhone);
-            Controls.Add(lblAddress);
+            Controls.Add(lblEmail);
             Controls.Add(lblDateOfBirth);
             Controls.Add(lblName);
-            Controls.Add(txtAddress);
+            Controls.Add(txtEmail);
             Controls.Add(txtDOB);
             Controls.Add(txtName);
             Controls.Add(lstCustomers);
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(6, 4, 6, 4);
             Name = "AddRemoveCustomerForm";
             Text = "AddRemoveCustomerForm";
             ResumeLayout(false);
@@ -197,16 +223,18 @@
         private ListBox lstCustomers;
         private TextBox txtName;
         private TextBox txtDOB;
-        private TextBox txtAddress;
+        private TextBox txtEmail;
         private Label lblName;
         private Label lblDateOfBirth;
-        private Label lblAddress;
+        private Label lblEmail;
         private Label lblPhone;
         private TextBox txtPhone;
         private Button btnCancel;
-        private Label lblAddCustomer;
-        private Label lblRemoveCustomer;
         private TextBox txtAddCustomer;
         private TextBox txtRemoveCustomer;
+        private Label lblLastName;
+        private TextBox txtLastName;
+        private Button btnAddCustomer;
+        private Button btnRemoveCustomer;
     }
 }

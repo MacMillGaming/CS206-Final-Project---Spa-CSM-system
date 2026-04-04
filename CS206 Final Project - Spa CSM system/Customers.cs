@@ -13,13 +13,13 @@ namespace CS206_Final_Project___Spa_CSM_system
         public string LastName { get; set; } = " ";
         public string Email { get; set; } = " ";
 
-        public long Phone { get; set; }
+        public string Phone { get; set; }
 
         public string FullName => $"{FirstName} {LastName}";
 
         public Customers() { }
 
-        public Customers(string firstname, string lastname, string email, long phone)
+        public Customers(string firstname, string lastname, string email, string phone)
         {
             this.FirstName = firstname;
             this.LastName = lastname;

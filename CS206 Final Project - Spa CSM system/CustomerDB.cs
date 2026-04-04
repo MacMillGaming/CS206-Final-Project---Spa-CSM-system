@@ -61,7 +61,7 @@ namespace CS206_Final_Project___Spa_CSM_system
                     FirstName = columns[0],
                     LastName = columns[1],
                     Email = columns[2],
-                    Phone = long.Parse(columns[3])
+                    Phone = (columns[3])
 
                 };
 
