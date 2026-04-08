@@ -127,6 +127,7 @@
             btnRemoveAppt.TabIndex = 17;
             btnRemoveAppt.Text = "&Remove Appt";
             btnRemoveAppt.UseVisualStyleBackColor = true;
+            btnRemoveAppt.Click += btnRemoveAppt_Click;
             // 
             // btnCancel
             // 

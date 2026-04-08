@@ -17,6 +17,7 @@ namespace CS206_Final_Project___Spa_CSM_system
             InitializeComponent();
         }
 
+
         private List<Customers> customers = null!;
         private List<Appointments> appointments = null!;
 
@@ -60,9 +61,14 @@ namespace CS206_Final_Project___Spa_CSM_system
 
         private Appointments SaveAppointment()
         {
-            appointment = new Appointments(txtProfessional.Text, txtService.Text, dateApptDate.Text);
+            appointment = new Appointments(txtProfessional.Text, txtService.Text, dateApptDate.Text, cboNameLookup.Text);
             return appointment;
         }
+
+        //private Appointments RemoveAppointment()
+        //{
+            
+        //}
 
         private void btnAddAppt_Click(object sender, EventArgs e)
         {
@@ -73,6 +79,11 @@ namespace CS206_Final_Project___Spa_CSM_system
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnRemoveAppt_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
