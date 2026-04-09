@@ -43,7 +43,7 @@
             txtLastName = new TextBox();
             btnAddCustomer = new Button();
             btnRemoveCustomer = new Button();
-            comboBox1 = new ComboBox();
+            cboNameLookup = new ComboBox();
             label1 = new Label();
             SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             txtDOB.Margin = new Padding(6, 4, 6, 4);
             txtDOB.Name = "txtDOB";
             txtDOB.Size = new Size(201, 39);
-            txtDOB.TabIndex = 2;
+            txtDOB.TabIndex = 3;
             // 
             // txtEmail
             // 
@@ -69,7 +69,7 @@
             txtEmail.Margin = new Padding(6, 4, 6, 4);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(201, 39);
-            txtEmail.TabIndex = 3;
+            txtEmail.TabIndex = 4;
             // 
             // lblName
             // 
@@ -118,7 +118,7 @@
             txtPhone.Margin = new Padding(6, 4, 6, 4);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(201, 39);
-            txtPhone.TabIndex = 8;
+            txtPhone.TabIndex = 5;
             // 
             // btnCancel
             // 
@@ -133,18 +133,22 @@
             // 
             // txtAddCustomer
             // 
-            txtAddCustomer.Location = new Point(657, 412);
+            txtAddCustomer.Enabled = false;
+            txtAddCustomer.Location = new Point(885, 470);
             txtAddCustomer.Margin = new Padding(6, 4, 6, 4);
             txtAddCustomer.Name = "txtAddCustomer";
-            txtAddCustomer.Size = new Size(201, 39);
+            txtAddCustomer.ReadOnly = true;
+            txtAddCustomer.Size = new Size(10, 39);
             txtAddCustomer.TabIndex = 12;
             // 
             // txtRemoveCustomer
             // 
-            txtRemoveCustomer.Location = new Point(657, 367);
+            txtRemoveCustomer.Enabled = false;
+            txtRemoveCustomer.Location = new Point(907, 470);
             txtRemoveCustomer.Margin = new Padding(6, 4, 6, 4);
             txtRemoveCustomer.Name = "txtRemoveCustomer";
-            txtRemoveCustomer.Size = new Size(201, 39);
+            txtRemoveCustomer.ReadOnly = true;
+            txtRemoveCustomer.Size = new Size(10, 39);
             txtRemoveCustomer.TabIndex = 13;
             // 
             // lblLastName
@@ -163,7 +167,7 @@
             txtLastName.Margin = new Padding(4, 2, 4, 2);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(201, 39);
-            txtLastName.TabIndex = 16;
+            txtLastName.TabIndex = 2;
             // 
             // btnAddCustomer
             // 
@@ -185,14 +189,15 @@
             btnRemoveCustomer.TabIndex = 18;
             btnRemoveCustomer.Text = "&Remove Customer";
             btnRemoveCustomer.UseVisualStyleBackColor = true;
+            btnRemoveCustomer.Click += btnRemoveCustomer_Click;
             // 
-            // comboBox1
+            // cboNameLookup
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(21, 42);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(316, 40);
-            comboBox1.TabIndex = 19;
+            cboNameLookup.FormattingEnabled = true;
+            cboNameLookup.Location = new Point(21, 42);
+            cboNameLookup.Name = "cboNameLookup";
+            cboNameLookup.Size = new Size(316, 40);
+            cboNameLookup.TabIndex = 19;
             // 
             // label1
             // 
@@ -209,7 +214,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(917, 510);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(cboNameLookup);
             Controls.Add(btnRemoveCustomer);
             Controls.Add(btnAddCustomer);
             Controls.Add(txtLastName);
@@ -228,6 +233,7 @@
             Margin = new Padding(6, 4, 6, 4);
             Name = "AddRemoveCustomerForm";
             Text = "AddRemoveCustomerForm";
+            Load += AddRemoveCustomer_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -248,7 +254,7 @@
         private TextBox txtLastName;
         private Button btnAddCustomer;
         private Button btnRemoveCustomer;
-        private ComboBox comboBox1;
+        private ComboBox cboNameLookup;
         private Label label1;
     }
 }

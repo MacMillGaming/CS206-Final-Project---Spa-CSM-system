@@ -161,6 +161,7 @@
             cboNameLookup.Name = "cboNameLookup";
             cboNameLookup.Size = new Size(504, 40);
             cboNameLookup.TabIndex = 21;
+            cboNameLookup.SelectedIndexChanged += cboNameLookup_SelectedIndexChanged;
             // 
             // AddRemoveApptForm
             // 

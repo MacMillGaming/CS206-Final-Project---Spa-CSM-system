@@ -16,8 +16,18 @@ namespace CS206_Final_Project___Spa_CSM_system
         {
             InitializeComponent();
 
-            txtAddCustomer.TextChanged += txtAddCustomer_TextChanged;
-            txtRemoveCustomer.TextChanged += txtRemoveCustomer_TextChanged;
+
+        }
+
+        private List<Customers> cboCustomer = null!;
+
+        private void AddRemoveCustomer_Load(object sender, EventArgs e)
+        {
+            cboCustomer = CustomerDB.GetCustomers();
+
+            cboNameLookup.DataSource = cboCustomer;
+            cboNameLookup.DisplayMember = "FullName";
+
         }
 
 
@@ -40,20 +50,6 @@ namespace CS206_Final_Project___Spa_CSM_system
 
 
 
-        private void txtAddCustomer_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtRemoveCustomer_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void lblName_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
@@ -66,5 +62,77 @@ namespace CS206_Final_Project___Spa_CSM_system
         {
             this.Close();
         }
+
+        private void btnRemoveCustomer_Click(object sender, EventArgs e)
+        {
+
+            int i = cboNameLookup.SelectedIndex;
+            if (i != -1)
+            {
+                Customers customertoRemove = cboCustomer[i];
+                string message = $"Are you sure you want to delete {customertoRemove.FullName}?";
+                DialogResult button = MessageBox.Show(message, "Confirm Delete", MessageBoxButtons.YesNo);
+                if (button == DialogResult.Yes)
+                {
+                    cboCustomer.Remove(customertoRemove);
+                    CustomerDB.SaveCustomers(cboCustomer);
+
+                    cboNameLookup.DataSource = null;
+                    cboNameLookup.DataSource = cboCustomer.ToList();
+                    if (cboNameLookup.Items.Count > 0)
+                    {
+                        cboNameLookup.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        cboNameLookup.Text = "";
+                    }
+
+                }
+
+                
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //__________________________________________________________________
+
+
+
+
+
+
+
+        private void txtAddCustomer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRemoveCustomer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

@@ -20,6 +20,7 @@ namespace CS206_Final_Project___Spa_CSM_system
 
         private List<Customers> customers = null!;
         private List<Appointments> appointments = null!;
+        private List<Appointments> displayedAppointments = new List<Appointments>();
 
         private void AddRemoveApptForm_Load(object sender, EventArgs e)
         {
@@ -36,6 +37,7 @@ namespace CS206_Final_Project___Spa_CSM_system
         private void FillAppointmentsListBox()
         {
             lstAppt.Items.Clear();
+            displayedAppointments.Clear();
 
             if (cboNameLookup.SelectedItem != null)
             {
@@ -46,6 +48,7 @@ namespace CS206_Final_Project___Spa_CSM_system
                     if (a.CustomerName == selectedCustomer.FullName)
                     {
                         lstAppt.Items.Add(a.GetDisplayText());
+                        displayedAppointments.Add(a);
                     }
                 }
             }
@@ -65,10 +68,7 @@ namespace CS206_Final_Project___Spa_CSM_system
             return appointment;
         }
 
-        //private Appointments RemoveAppointment()
-        //{
-            
-        //}
+        
 
         private void btnAddAppt_Click(object sender, EventArgs e)
         {
@@ -84,6 +84,27 @@ namespace CS206_Final_Project___Spa_CSM_system
         private void btnRemoveAppt_Click(object sender, EventArgs e)
         {
 
+            int i = lstAppt.SelectedIndex;
+            if (i != -1)
+            {
+                Appointments appointmenttoRemove = displayedAppointments[i];
+                string message = $"Are you sure you want to delete {appointmenttoRemove.GetDisplayText()}?";
+                DialogResult button = MessageBox.Show(message, "Confirm Delete", MessageBoxButtons.YesNo);
+                if (button == DialogResult.Yes)
+                {
+                    appointments.Remove(appointmenttoRemove);
+                    ApptDB.SaveAppointments(appointments);
+                    FillAppointmentsListBox();
+                }
+            }
+
+
+
+        }
+
+        private void cboNameLookup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillAppointmentsListBox();
         }
     }
 }
