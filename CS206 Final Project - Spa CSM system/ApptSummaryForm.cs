@@ -28,5 +28,10 @@ namespace CS206_Final_Project___Spa_CSM_system
         {
             this.Close();
         }
+
+        private void RunSumamry()
+        {
+
+        }
     }
 }

@@ -41,6 +41,7 @@
             lstAppt = new ListBox();
             dateApptDate = new DateTimePicker();
             cboNameLookup = new ComboBox();
+            cboService = new ComboBox();
             SuspendLayout();
             // 
             // lblSelectCustomer
@@ -84,7 +85,7 @@
             // lblService
             // 
             lblService.AutoSize = true;
-            lblService.Location = new Point(570, 197);
+            lblService.Location = new Point(570, 200);
             lblService.Margin = new Padding(4, 0, 4, 0);
             lblService.Name = "lblService";
             lblService.Size = new Size(90, 32);
@@ -93,7 +94,7 @@
             // 
             // txtService
             // 
-            txtService.Location = new Point(570, 242);
+            txtService.Location = new Point(801, 131);
             txtService.Margin = new Padding(4);
             txtService.Name = "txtService";
             txtService.Size = new Size(194, 39);
@@ -111,9 +112,9 @@
             // 
             // btnAddAppt
             // 
-            btnAddAppt.Location = new Point(801, 62);
+            btnAddAppt.Location = new Point(821, 62);
             btnAddAppt.Name = "btnAddAppt";
-            btnAddAppt.Size = new Size(227, 46);
+            btnAddAppt.Size = new Size(207, 46);
             btnAddAppt.TabIndex = 16;
             btnAddAppt.Text = "&Add Appointment";
             btnAddAppt.UseVisualStyleBackColor = true;
@@ -121,9 +122,9 @@
             // 
             // btnRemoveAppt
             // 
-            btnRemoveAppt.Location = new Point(801, 235);
+            btnRemoveAppt.Location = new Point(821, 235);
             btnRemoveAppt.Name = "btnRemoveAppt";
-            btnRemoveAppt.Size = new Size(217, 46);
+            btnRemoveAppt.Size = new Size(197, 46);
             btnRemoveAppt.TabIndex = 17;
             btnRemoveAppt.Text = "&Remove Appt";
             btnRemoveAppt.UseVisualStyleBackColor = true;
@@ -163,11 +164,20 @@
             cboNameLookup.TabIndex = 21;
             cboNameLookup.SelectedIndexChanged += cboNameLookup_SelectedIndexChanged;
             // 
+            // cboService
+            // 
+            cboService.FormattingEnabled = true;
+            cboService.Location = new Point(553, 235);
+            cboService.Name = "cboService";
+            cboService.Size = new Size(242, 40);
+            cboService.TabIndex = 22;
+            // 
             // AddRemoveApptForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1040, 576);
+            Controls.Add(cboService);
             Controls.Add(cboNameLookup);
             Controls.Add(dateApptDate);
             Controls.Add(lstAppt);
@@ -204,5 +214,6 @@
         private ListBox lstAppt;
         private DateTimePicker dateApptDate;
         private ComboBox cboNameLookup;
+        private ComboBox cboService;
     }
 }
