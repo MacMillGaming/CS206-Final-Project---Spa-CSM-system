@@ -29,5 +29,10 @@ namespace CS206_Final_Project___Spa_CSM_system
 
         public string GetDisplayText() => $"{FirstName} {LastName}, {Email}, {Phone}";
 
+        public override string ToString()
+        {
+            return FullName;
+        }
+
     }
 }

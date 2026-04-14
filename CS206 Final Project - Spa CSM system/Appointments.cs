@@ -18,11 +18,12 @@ namespace CS206_Final_Project___Spa_CSM_system
 
         public Appointments() { }
 
-        public Appointments(string professional, string service, string datetime)
+        public Appointments(string professional, string service, string datetime, string customername)
         {
             Professional = professional;
             Service = service;
             DateTime = datetime;
+            CustomerName = customername;
         }
 
         public string GetDisplayText() => $"{Professional} {Service}, {DateTime}";

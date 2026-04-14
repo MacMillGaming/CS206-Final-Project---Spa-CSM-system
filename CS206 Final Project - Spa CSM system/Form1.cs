@@ -53,18 +53,19 @@ namespace CS206_Final_Project___Spa_CSM_system
                }
 
                customers.Add(customer);
-               CustomerDB.SaveCustomers(customers);
-
-               cboNameLookup.DataSource = null;
-               cboNameLookup.DataSource = customers;
-               cboNameLookup.DisplayMember = "FullName";
-
-               FillAppointmentsListBox();
-               MessageBox.Show("Customer Saved");
-                
-               
+               CustomerDB.SaveCustomers(customers);             
+                              
+               MessageBox.Show("Customer Saved");                             
                 
             }
+
+            customers = CustomerDB.GetCustomers();
+
+            cboNameLookup.DataSource = null;
+            cboNameLookup.DisplayMember = "Full Name";
+            cboNameLookup.DataSource = customers;            
+
+            FillAppointmentsListBox();
 
         }
 
@@ -77,9 +78,11 @@ namespace CS206_Final_Project___Spa_CSM_system
 
                 appointments.Add(appointment);
                 ApptDB.SaveAppointments(appointments);
-                FillAppointmentsListBox();
                 MessageBox.Show("Appointment Saved");
             }
+
+            appointments = ApptDB.GetAppointments();
+            FillAppointmentsListBox();
 
         }
 
