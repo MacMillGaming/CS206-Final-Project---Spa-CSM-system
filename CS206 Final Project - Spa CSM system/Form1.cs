@@ -44,6 +44,7 @@ namespace CS206_Final_Project___Spa_CSM_system
         {
             AddRemoveCustomerForm addRemoveCustForm = new();
             Customers customer = addRemoveCustForm.GetNewCustomer(); 
+
             if (customer != null)
             {
                 
@@ -62,7 +63,7 @@ namespace CS206_Final_Project___Spa_CSM_system
             customers = CustomerDB.GetCustomers();
 
             cboNameLookup.DataSource = null;
-            cboNameLookup.DisplayMember = "Full Name";
+            cboNameLookup.DisplayMember = "FullName";
             cboNameLookup.DataSource = customers;            
 
             FillAppointmentsListBox();

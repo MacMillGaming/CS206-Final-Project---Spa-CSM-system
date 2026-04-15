@@ -12,28 +12,34 @@ namespace CS206_Final_Project___Spa_CSM_system
 {
     public partial class AddRemoveCustomerForm : Form
     {
+
+        private List<Customers> allCustomers = new List<Customers>();
+        private Customers customer = null!;
+
         public AddRemoveCustomerForm()
         {
             InitializeComponent();
 
-
+            allCustomers = CustomerDB.GetCustomers();
+            cboCustomer.DisplayMember = "FullName";
+            cboCustomer.DataSource = allCustomers;
         }
 
-        private List<Customers> cboCustomer = null!;
+
 
         private void AddRemoveCustomer_Load(object sender, EventArgs e)
         {
-            cboCustomer = CustomerDB.GetCustomers();
+            allCustomers = CustomerDB.GetCustomers();
 
-            cboNameLookup.DataSource = cboCustomer;
-            cboNameLookup.DisplayMember = "FullName";
-
+            cboCustomer.DataSource = null;
+            cboCustomer.DisplayMember = "FullName";
+            cboCustomer.DataSource = allCustomers;
         }
 
 
         //add customer
-        private List<string> customers = new List<string>();
-        private Customers customer = null!;
+
+
 
 
         public Customers GetNewCustomer()
@@ -53,48 +59,65 @@ namespace CS206_Final_Project___Spa_CSM_system
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text))
+            {
+                MessageBox.Show("Please enter a First and Last name before saving.", "Missing Info");
+                return;
+            }
+
             SaveCustomer();
+
             this.Close();
 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            customer = null!;
             this.Close();
         }
 
         private void btnRemoveCustomer_Click(object sender, EventArgs e)
         {
-
-            int i = cboNameLookup.SelectedIndex;
+            int i = cboCustomer.SelectedIndex;
             if (i != -1)
             {
-                Customers customertoRemove = cboCustomer[i];
+                Customers customertoRemove = allCustomers[i];
                 string message = $"Are you sure you want to delete {customertoRemove.FullName}?";
                 DialogResult button = MessageBox.Show(message, "Confirm Delete", MessageBoxButtons.YesNo);
+
                 if (button == DialogResult.Yes)
                 {
-                    cboCustomer.Remove(customertoRemove);
-                    CustomerDB.SaveCustomers(cboCustomer);
+                    // 1. UNBIND FIRST so the ComboBox lets go of our list
+                    cboCustomer.DataSource = null;
 
-                    cboNameLookup.DataSource = null;
-                    cboNameLookup.DataSource = cboCustomer.ToList();
-                    if (cboNameLookup.Items.Count > 0)
+                    // 2. GUARANTEED DELETE: Remove the exact index rather than guessing the object
+                    allCustomers.RemoveAt(i);
+
+                    // 3. Save the new, shorter list
+                    CustomerDB.SaveCustomers(allCustomers);
+
+                    // 4. REBIND properly with the DisplayMember
+                    cboCustomer.DisplayMember = "FullName"; // Do not forget this!
+                    cboCustomer.DataSource = allCustomers;
+
+                    if (cboCustomer.Items.Count > 0)
                     {
-                        cboNameLookup.SelectedIndex = 0;
+                        cboCustomer.SelectedIndex = 0;
                     }
                     else
                     {
-                        cboNameLookup.Text = "";
+                        cboCustomer.Text = "";
                     }
 
+                    // Optional: Pop up a quick success message so you know it worked!
+                    MessageBox.Show("Customer successfully deleted.", "Success");
                 }
-
-                
             }
-
-
         }
+
+
+        
 
 
 
