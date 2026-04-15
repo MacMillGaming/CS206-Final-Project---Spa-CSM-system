@@ -45,16 +45,6 @@
             label1 = new Label();
             SuspendLayout();
             // 
-            // lstCustomers
-            // 
-            lstCustomers.FormattingEnabled = true;
-            lstCustomers.ItemHeight = 15;
-            lstCustomers.Location = new Point(10, 23);
-            lstCustomers.Margin = new Padding(3, 2, 3, 2);
-            lstCustomers.Name = "lstCustomers";
-            lstCustomers.Size = new Size(180, 199);
-            lstCustomers.TabIndex = 0;
-            // 
             // txtName
             // 
             txtName.Location = new Point(206, 20);
@@ -135,22 +125,6 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
-            // txtAddCustomer
-            // 
-            txtAddCustomer.Location = new Point(354, 193);
-            txtAddCustomer.Margin = new Padding(3, 2, 3, 2);
-            txtAddCustomer.Name = "txtAddCustomer";
-            txtAddCustomer.Size = new Size(110, 23);
-            txtAddCustomer.TabIndex = 12;
-            // 
-            // txtRemoveCustomer
-            // 
-            txtRemoveCustomer.Location = new Point(354, 172);
-            txtRemoveCustomer.Margin = new Padding(3, 2, 3, 2);
-            txtRemoveCustomer.Name = "txtRemoveCustomer";
-            txtRemoveCustomer.Size = new Size(110, 23);
-            txtRemoveCustomer.TabIndex = 13;
-            // 
             // lblLastName
             // 
             lblLastName.AutoSize = true;
@@ -212,7 +186,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(494, 239);
+            ClientSize = new Size(942, 516);
             Controls.Add(btnRemoveCustomer);
             Controls.Add(btnAddCustomer);
             Controls.Add(txtLastName);
