@@ -42,97 +42,111 @@
             // 
             // dateStartDate
             // 
-            dateStartDate.Location = new Point(29, 50);
+            dateStartDate.Location = new Point(16, 23);
+            dateStartDate.Margin = new Padding(2, 1, 2, 1);
             dateStartDate.Name = "dateStartDate";
-            dateStartDate.Size = new Size(400, 39);
+            dateStartDate.Size = new Size(217, 23);
             dateStartDate.TabIndex = 0;
             // 
             // dateEndDate
             // 
-            dateEndDate.Location = new Point(29, 161);
+            dateEndDate.Location = new Point(16, 75);
+            dateEndDate.Margin = new Padding(2, 1, 2, 1);
             dateEndDate.Name = "dateEndDate";
-            dateEndDate.Size = new Size(400, 39);
+            dateEndDate.Size = new Size(217, 23);
             dateEndDate.TabIndex = 1;
             // 
             // cboService
             // 
             cboService.FormattingEnabled = true;
-            cboService.Location = new Point(29, 285);
+            cboService.Location = new Point(16, 134);
+            cboService.Margin = new Padding(2, 1, 2, 1);
             cboService.Name = "cboService";
-            cboService.Size = new Size(391, 40);
+            cboService.Size = new Size(212, 23);
             cboService.TabIndex = 2;
             // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(467, 161);
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(251, 75);
+            listBox1.Margin = new Padding(2, 1, 2, 1);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(718, 420);
+            listBox1.Size = new Size(388, 199);
             listBox1.TabIndex = 3;
             // 
             // btnRun
             // 
-            btnRun.Location = new Point(467, 66);
+            btnRun.BackColor = Color.LightPink;
+            btnRun.Location = new Point(251, 31);
+            btnRun.Margin = new Padding(2, 1, 2, 1);
             btnRun.Name = "btnRun";
-            btnRun.Size = new Size(164, 46);
+            btnRun.Size = new Size(88, 22);
             btnRun.TabIndex = 4;
             btnRun.Text = "&Run";
-            btnRun.UseVisualStyleBackColor = true;
+            btnRun.UseVisualStyleBackColor = false;
             btnRun.Click += btnRun_Click;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(1035, 66);
+            btnCancel.BackColor = Color.LightPink;
+            btnCancel.Location = new Point(557, 31);
+            btnCancel.Margin = new Padding(2, 1, 2, 1);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(150, 46);
+            btnCancel.Size = new Size(81, 22);
             btnCancel.TabIndex = 5;
             btnCancel.Text = "&Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(29, 9);
+            label1.Location = new Point(16, 4);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(119, 32);
+            label1.Size = new Size(58, 15);
             label1.TabIndex = 6;
             label1.Text = "Start Date";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(26, 125);
+            label2.Location = new Point(14, 59);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(111, 32);
+            label2.Size = new Size(54, 15);
             label2.TabIndex = 7;
             label2.Text = "End Date";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(29, 241);
+            label3.Location = new Point(16, 113);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(90, 32);
+            label3.Size = new Size(44, 15);
             label3.TabIndex = 8;
             label3.Text = "Service";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(467, 125);
+            label4.Location = new Point(251, 59);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(280, 32);
+            label4.Size = new Size(140, 15);
             label4.TabIndex = 9;
             label4.Text = "Appointment Summaries";
             // 
             // ApptSummaryForm
             // 
             AcceptButton = btnRun;
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LavenderBlush;
             CancelButton = btnCancel;
-            ClientSize = new Size(1248, 630);
+            ClientSize = new Size(672, 295);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -143,6 +157,7 @@
             Controls.Add(cboService);
             Controls.Add(dateEndDate);
             Controls.Add(dateStartDate);
+            Margin = new Padding(2, 1, 2, 1);
             Name = "ApptSummaryForm";
             Text = "ApptSummaryForm";
             ResumeLayout(false);

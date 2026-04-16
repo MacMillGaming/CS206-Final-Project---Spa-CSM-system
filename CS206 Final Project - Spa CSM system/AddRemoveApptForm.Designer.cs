@@ -47,136 +47,148 @@
             // lblSelectCustomer
             // 
             lblSelectCustomer.AutoSize = true;
-            lblSelectCustomer.Location = new Point(32, 33);
-            lblSelectCustomer.Margin = new Padding(4, 0, 4, 0);
+            lblSelectCustomer.Location = new Point(17, 15);
+            lblSelectCustomer.Margin = new Padding(2, 0, 2, 0);
             lblSelectCustomer.Name = "lblSelectCustomer";
-            lblSelectCustomer.Size = new Size(188, 32);
+            lblSelectCustomer.Size = new Size(93, 15);
             lblSelectCustomer.TabIndex = 0;
             lblSelectCustomer.Text = "Select Customer";
             // 
             // lblSelectAppt
             // 
             lblSelectAppt.AutoSize = true;
-            lblSelectAppt.Location = new Point(34, 151);
-            lblSelectAppt.Margin = new Padding(4, 0, 4, 0);
+            lblSelectAppt.Location = new Point(18, 71);
+            lblSelectAppt.Margin = new Padding(2, 0, 2, 0);
             lblSelectAppt.Name = "lblSelectAppt";
-            lblSelectAppt.Size = new Size(226, 32);
+            lblSelectAppt.Size = new Size(112, 15);
             lblSelectAppt.TabIndex = 2;
             lblSelectAppt.Text = "Select Appointment";
             // 
             // lblProfessional
             // 
             lblProfessional.AutoSize = true;
-            lblProfessional.Location = new Point(570, 30);
-            lblProfessional.Margin = new Padding(4, 0, 4, 0);
+            lblProfessional.Location = new Point(307, 14);
+            lblProfessional.Margin = new Padding(2, 0, 2, 0);
             lblProfessional.Name = "lblProfessional";
-            lblProfessional.Size = new Size(142, 32);
+            lblProfessional.Size = new Size(71, 15);
             lblProfessional.TabIndex = 4;
             lblProfessional.Text = "Professional";
             // 
             // txtProfessional
             // 
-            txtProfessional.Location = new Point(570, 66);
-            txtProfessional.Margin = new Padding(4);
+            txtProfessional.Location = new Point(307, 31);
+            txtProfessional.Margin = new Padding(2, 2, 2, 2);
             txtProfessional.Name = "txtProfessional";
-            txtProfessional.Size = new Size(194, 39);
+            txtProfessional.Size = new Size(106, 23);
             txtProfessional.TabIndex = 5;
             // 
             // lblService
             // 
             lblService.AutoSize = true;
-            lblService.Location = new Point(570, 200);
-            lblService.Margin = new Padding(4, 0, 4, 0);
+            lblService.Location = new Point(307, 94);
+            lblService.Margin = new Padding(2, 0, 2, 0);
             lblService.Name = "lblService";
-            lblService.Size = new Size(90, 32);
+            lblService.Size = new Size(44, 15);
             lblService.TabIndex = 6;
             lblService.Text = "Service";
             // 
             // txtService
             // 
-            txtService.Location = new Point(801, 131);
-            txtService.Margin = new Padding(4);
+            txtService.Location = new Point(431, 61);
+            txtService.Margin = new Padding(2, 2, 2, 2);
             txtService.Name = "txtService";
-            txtService.Size = new Size(194, 39);
+            txtService.Size = new Size(106, 23);
             txtService.TabIndex = 7;
             // 
             // lblDate
             // 
             lblDate.AutoSize = true;
-            lblDate.Location = new Point(570, 336);
-            lblDate.Margin = new Padding(4, 0, 4, 0);
+            lblDate.Location = new Point(307, 158);
+            lblDate.Margin = new Padding(2, 0, 2, 0);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(64, 32);
+            lblDate.Size = new Size(31, 15);
             lblDate.TabIndex = 8;
             lblDate.Text = "Date";
             // 
             // btnAddAppt
             // 
-            btnAddAppt.Location = new Point(821, 62);
+            btnAddAppt.BackColor = Color.LightPink;
+            btnAddAppt.Location = new Point(442, 29);
+            btnAddAppt.Margin = new Padding(2, 1, 2, 1);
             btnAddAppt.Name = "btnAddAppt";
-            btnAddAppt.Size = new Size(207, 46);
+            btnAddAppt.Size = new Size(111, 22);
             btnAddAppt.TabIndex = 16;
             btnAddAppt.Text = "&Add Appointment";
-            btnAddAppt.UseVisualStyleBackColor = true;
+            btnAddAppt.UseVisualStyleBackColor = false;
             btnAddAppt.Click += btnAddAppt_Click;
             // 
             // btnRemoveAppt
             // 
-            btnRemoveAppt.Location = new Point(821, 235);
+            btnRemoveAppt.BackColor = Color.LightPink;
+            btnRemoveAppt.Location = new Point(442, 110);
+            btnRemoveAppt.Margin = new Padding(2, 1, 2, 1);
             btnRemoveAppt.Name = "btnRemoveAppt";
-            btnRemoveAppt.Size = new Size(197, 46);
+            btnRemoveAppt.Size = new Size(106, 22);
             btnRemoveAppt.TabIndex = 17;
             btnRemoveAppt.Text = "&Remove Appt";
-            btnRemoveAppt.UseVisualStyleBackColor = true;
+            btnRemoveAppt.UseVisualStyleBackColor = false;
             btnRemoveAppt.Click += btnRemoveAppt_Click;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(838, 499);
+            btnCancel.BackColor = Color.LightPink;
+            btnCancel.Location = new Point(451, 234);
+            btnCancel.Margin = new Padding(2, 1, 2, 1);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(180, 46);
+            btnCancel.Size = new Size(97, 22);
             btnCancel.TabIndex = 18;
             btnCancel.Text = "&Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // lstAppt
             // 
             lstAppt.FormattingEnabled = true;
-            lstAppt.Location = new Point(34, 189);
+            lstAppt.ItemHeight = 15;
+            lstAppt.Location = new Point(18, 89);
+            lstAppt.Margin = new Padding(2, 1, 2, 1);
             lstAppt.Name = "lstAppt";
-            lstAppt.Size = new Size(502, 356);
+            lstAppt.Size = new Size(272, 169);
             lstAppt.TabIndex = 19;
             // 
             // dateApptDate
             // 
-            dateApptDate.Location = new Point(568, 371);
+            dateApptDate.Location = new Point(306, 174);
+            dateApptDate.Margin = new Padding(2, 1, 2, 1);
             dateApptDate.Name = "dateApptDate";
-            dateApptDate.Size = new Size(450, 39);
+            dateApptDate.Size = new Size(244, 23);
             dateApptDate.TabIndex = 20;
             // 
             // cboNameLookup
             // 
             cboNameLookup.FormattingEnabled = true;
-            cboNameLookup.Location = new Point(32, 65);
+            cboNameLookup.Location = new Point(17, 30);
+            cboNameLookup.Margin = new Padding(2, 1, 2, 1);
             cboNameLookup.Name = "cboNameLookup";
-            cboNameLookup.Size = new Size(504, 40);
+            cboNameLookup.Size = new Size(273, 23);
             cboNameLookup.TabIndex = 21;
             cboNameLookup.SelectedIndexChanged += cboNameLookup_SelectedIndexChanged;
             // 
             // cboService
             // 
             cboService.FormattingEnabled = true;
-            cboService.Location = new Point(553, 235);
+            cboService.Location = new Point(298, 110);
+            cboService.Margin = new Padding(2, 1, 2, 1);
             cboService.Name = "cboService";
-            cboService.Size = new Size(242, 40);
+            cboService.Size = new Size(132, 23);
             cboService.TabIndex = 22;
             // 
             // AddRemoveApptForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1040, 576);
+            BackColor = Color.LavenderBlush;
+            ClientSize = new Size(560, 270);
             Controls.Add(cboService);
             Controls.Add(cboNameLookup);
             Controls.Add(dateApptDate);
@@ -191,7 +203,7 @@
             Controls.Add(lblProfessional);
             Controls.Add(lblSelectAppt);
             Controls.Add(lblSelectCustomer);
-            Margin = new Padding(4);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "AddRemoveApptForm";
             Text = "AddRemoveApptForm";
             Load += AddRemoveApptForm_Load;
