@@ -72,6 +72,13 @@ namespace CS206_Final_Project___Spa_CSM_system
 
         private void btnAddRemoveAppt_Click(object sender, EventArgs e)
         {
+            if (customers == null || customers.Count == 0)
+            {
+                MessageBox.Show(
+                    "There are no customers in the system.\nPlease add a customer first.",
+                    "No Customers");
+                return;
+            }
             AddRemoveApptForm addRemoveApptForm = new();
             Appointments appointment = addRemoveApptForm.GetNewAppointment(); 
             if (appointment != null)

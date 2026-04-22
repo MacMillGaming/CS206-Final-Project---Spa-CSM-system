@@ -59,16 +59,25 @@ namespace CS206_Final_Project___Spa_CSM_system
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text))
+            string errorMsg = "";
+
+            errorMsg += Validator.IsPresent(txtName.Text.Trim(), "First Name");
+            errorMsg += Validator.IsPresent(txtLastName.Text.Trim(), "Last Name");
+
+            if (txtEmail.Text.Trim() != "")
+                errorMsg += Validator.IsValidEmail(txtEmail.Text.Trim(), "Email");
+
+            if (txtPhone.Text.Trim() != "")
+                errorMsg += Validator.IsValidPhone(txtPhone.Text.Trim(), "Phone");
+
+            if (errorMsg != "")
             {
-                MessageBox.Show("Please enter a First and Last name before saving.", "Missing Info");
+                MessageBox.Show(errorMsg, "Entry Error");
                 return;
             }
 
             SaveCustomer();
-
             this.Close();
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -79,6 +88,11 @@ namespace CS206_Final_Project___Spa_CSM_system
 
         private void btnRemoveCustomer_Click(object sender, EventArgs e)
         {
+            if (cboCustomer.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a customer to remove.", "No Selection");
+                return;
+            }
             int i = cboCustomer.SelectedIndex;
             if (i != -1)
             {

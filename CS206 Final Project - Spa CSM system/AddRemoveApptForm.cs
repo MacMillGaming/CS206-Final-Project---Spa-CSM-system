@@ -50,7 +50,7 @@ namespace CS206_Final_Project___Spa_CSM_system
 
             // Set date picker to show tomorrow at 9 AM as a sensible default.
             dateApptDate.Value = DateTime.Today.AddDays(1).Date.AddHours(9);
-
+            dateApptDate.MinDate = DateTime.Today;
             // Show the appointments for whichever customer is selected by default.
             FillAppointmentsListBox();
         }
@@ -126,19 +126,43 @@ namespace CS206_Final_Project___Spa_CSM_system
         // ── Add Appointment button ────────────────────────────────────────────
         private void btnAddAppt_Click(object sender, EventArgs e)
         {
-            // Validate required fields using the Validator class before doing anything.
             string errorMsg = "";
+
+            // A customer must be selected — appointments belong to someone.
+            if (cboNameLookup.SelectedItem == null)
+                errorMsg += "Please select a customer.\n";
+
+            // Validate required fields using the Validator class before doing anything.
             errorMsg += Validator.IsPresent(txtProfessional.Text.Trim(), "Professional");
 
             // cboService always has a selection (it is pre-loaded), but guard anyway.
             if (cboService.SelectedItem == null)
                 errorMsg += "Service is a required field.\n";
 
+            // The appointment date must not be in the past.
+            if (dateApptDate.Value.Date < DateTime.Today)
+                errorMsg += "Appointment date cannot be in the past.\n";
+
+            // Check for a duplicate: same customer already has an appointment at this exact date/time.
+            if (cboNameLookup.SelectedItem != null)
+            {
+                string selectedCustomerName = ((Customers)cboNameLookup.SelectedItem).FullName;
+                string selectedDateTime = dateApptDate.Value.ToString("MM/dd/yyyy hh:mm tt");
+
+                bool duplicate = appointments.Any(a =>
+                    a.CustomerName == selectedCustomerName &&
+                    a.DateTime == selectedDateTime);
+
+                if (duplicate)
+                    errorMsg += "This customer already has an appointment at that date and time.\n";
+            }
+
             if (errorMsg != "")
             {
                 MessageBox.Show(errorMsg, "Entry Error");
                 return;
             }
+            // ─────────────────────────────────────────────────────────────────
 
             // Build and persist the new appointment, then close.
             SaveAppointment();
@@ -148,6 +172,11 @@ namespace CS206_Final_Project___Spa_CSM_system
         // ── Remove Appointment button ─────────────────────────────────────────
         private void btnRemoveAppt_Click(object sender, EventArgs e)
         {
+            if (lstAppt.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select an appointment to remove.", "No Selection");
+                return;
+            }
             int i = lstAppt.SelectedIndex;
 
             // -1 means nothing is selected.

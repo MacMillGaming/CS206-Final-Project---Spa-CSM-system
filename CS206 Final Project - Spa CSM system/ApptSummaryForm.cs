@@ -55,7 +55,12 @@ if (dateEndDate.Value < dateStartDate.Value) // If end date is earlier than star
         }
         private void btnRun_Click(object sender, EventArgs e) // runs when user clicks the Run button
 {
-listBox1.Items.Clear(); // clears previous results so new search starts fresh
+            if (dateStartDate.Value.Date > dateEndDate.Value.Date)
+            {
+                MessageBox.Show("Start date cannot be after end date.", "Entry Error");
+                return;
+            }
+            listBox1.Items.Clear(); // clears previous results so new search starts fresh
 DateTime startDate = dateStartDate.Value.Date; // gets start date (removes time part)
     DateTime endDate = dateEndDate.Value.Date; // gets end date (removes time part)
 if (startDate > endDate) // Checks if user selected invalid date range
